@@ -50,11 +50,15 @@ def generate():
 
 @app.route("/video_feed")
 def video_feed():
-    return Response(generate(), mimetype= "multipart/x-mixed-replace; boundary=frame")
-
-if __name__ == "__main__":
     t = threading.Thread(target = detect)
     t.daemon = True
     t.start()
+    return Response(generate(), mimetype= "multipart/x-mixed-replace; boundary=frame")
+
+if __name__ == "__main__":
+    
 
     app.run()
+
+
+    video_capture.stop()
