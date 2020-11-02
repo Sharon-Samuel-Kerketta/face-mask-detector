@@ -9,7 +9,7 @@ from tensorflow.keras.preprocessing.image import img_to_array
 
 casc_path = os.path.dirname(cv2.__file__) + "/data/haarcascade_frontalface_alt2.xml"
 face_cascade = cv2.CascadeClassifier(casc_path)
-model = load_model('./src/modelling/models/model_resnet_50/best_model.hdf5')
+model = load_model('./src/best_model.hdf5')
 
 
 def process_frame(frame):
